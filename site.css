@@ -1,0 +1,10 @@
+:root {
+}
+
+.grad {
+  background-image: radial-gradient(#d0e7ff 5%, white 50%);
+}
+
+.mh {
+  min-height: calc(100vh - 120px);
+}

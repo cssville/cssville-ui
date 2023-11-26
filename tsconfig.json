@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "module": "nodenext",
+    "lib": [
+      "ES2022",
+      "dom"
+    ],
+    "rootDir": "",
+    "moduleResolution": "NodeNext",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "components/**/*",
+    "build/**/*",
+    "index.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+  ]
+}

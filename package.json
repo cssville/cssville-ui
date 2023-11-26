@@ -1,0 +1,56 @@
+{
+  "name": "cssville-web",
+  "version": "0.1.1",
+  "description": "Cssville website",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch:build": "webpack --watch",
+    "watch:server": "lite-server -c lite-server-config.json",
+    "start": "npm-run-all build --parallel watch:build watch:server --print-label",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cssville/cssville-web.git"
+  },
+  "keywords": [
+    "css",
+    "framework"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cssville/cssville-web/issues"
+  },
+  "homepage": "https://github.com/cssville/cssville-web#readme",
+  "dependencies": {
+    "cssville": "^0.6.5",
+    "express": "^4.18.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0"
+  },
+  "devDependencies": {
+    "@types/highlight.js": "^10.1.0",
+    "@types/node": "^16.6.2",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "copyfiles": "^2.4.1",
+    "css-loader": "^6.8.1",
+    "css-minimizer-webpack-plugin": "^5.0.1",
+    "glob-all": "^3.3.1",
+    "highlight.js": "^11.7.0",
+    "lite-server": "^2.6.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "nodemon": "^2.0.12",
+    "npm-run-all": "^4.1.5",
+    "purgecss-webpack-plugin": "^5.0.0",
+    "rimraf": "^3.0.2",
+    "style-loader": "^3.3.3",
+    "terser-webpack-plugin": "^5.3.9",
+    "ts-loader": "^9.2.8",
+    "typescript": "^4.6.3",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
