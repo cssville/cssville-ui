@@ -7,7 +7,7 @@
     "build": "webpack",
     "watch:build": "webpack --watch",
     "watch:server": "lite-server -c lite-server-config.json",
-    "start": "npm-run-all build --parallel watch:build watch:server --print-label",
+    "start": "npm-run-all build --parallel watch:build watch:server --print-label"
   },
   "repository": {
     "type": "git",
