@@ -2,7 +2,10 @@
   "name": "cssville-web",
   "version": "0.1.1",
   "description": "Cssville website",
-  "main": "index.js",
+  "files": [
+    "LICENSE.md",
+    "components/ui"
+  ],
   "scripts": {
     "build": "webpack",
     "watch:build": "webpack --watch",
