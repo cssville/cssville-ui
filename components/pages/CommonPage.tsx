@@ -1,6 +1,5 @@
 import React from 'react';
-import { Header } from '../ui/Header';
-import { Footer } from '../ui/Footer';
+import { Header } from '../Header';
 import { Section } from '../ui/simple/Section';
 import { Display } from '../ui/simple/Typography';
 import { Divider } from '../ui/simple/Divider';
@@ -14,7 +13,6 @@ export const CommonPage = (props) => {
         <Divider lg />
         {props.children}
       </Section>
-      <Footer />
     </>
   );
 };

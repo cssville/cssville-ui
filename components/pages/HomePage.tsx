@@ -1,6 +1,5 @@
 import React from 'react';
-import { Header } from '../ui/Header';
-import { Footer } from '../ui/Footer';
+import { Header } from '../Header';
 import { Section } from '../ui/simple/Section';
 import { Column } from '../ui/simple/Column';
 
@@ -22,7 +21,6 @@ export const HomePage = (props) => {
             ))
           }
         </Column>
-        <Footer />
       </Section>
     </>
   );

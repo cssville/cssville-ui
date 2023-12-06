@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from './simple/Button';
+import { Button } from './ui/simple/Button';
 
 export const Header = (props: any) => {
   return (
@@ -19,9 +19,9 @@ export const Header = (props: any) => {
             <div className="d-flex flex-direction-row md-flex-direction-column md-mx-auto align-items-center justify-content-center">
               {
                 [
-                  ['Demo', '#demo'],
-                  ['Prefixes', '#prefixes'],
-                  ['Classes', '#classes'],
+                  ['Home', '/'],
+                  ['Buttons', '/button'],
+                  ['Typography', '/typography'],
                 ].map(([text, href]) => (
                   <a className="d-flex px-4 py-3 text-decoration-none bg-color-grey-100-hover br-4 color-blue-grey-900" href={href}>
                     <span className="fs-medium fw-bold">{text}</span>
