@@ -39,7 +39,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'web.bundle.css', // Name of the output bundle file
+      filename: 'cssville-ui.bundle.css', // Name of the output bundle file
     }),
     new PurgeCSSPlugin({
       paths: [PATHS.index, ...glob.sync(`${PATHS.components}/**/*`, { nodir: true })],

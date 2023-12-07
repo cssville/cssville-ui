@@ -1,18 +1,15 @@
 {
   "compilerOptions": {
     "jsx": "react",
+    "target": "ES2015",
     "module": "nodenext",
-    "lib": [
-      "ES2022",
-      "dom"
-    ],
+    "lib": ["es5", "es6", "dom"],
     "rootDir": "",
-    "moduleResolution": "NodeNext",
-    "allowSyntheticDefaultImports": true
+    "outDir": "build",
+    "declaration": true
   },
   "include": [
     "components/**/*",
-    "build/**/*",
     "index.tsx"
   ],
   "exclude": [

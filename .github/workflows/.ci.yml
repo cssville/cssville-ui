@@ -7,6 +7,7 @@ permissions: write-all
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/prod'
     steps:
       - uses: actions/checkout@v3
         with:
@@ -21,3 +22,27 @@ jobs:
       - run: npm install typescript -g
       - run: npm install
       - run: npm run build
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/prod'
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install npm@latest -g
+      - run: npm install typescript -g
+      - run: npm install
+      - run: npm run build
+      - run: npm run build:ts
+      - run: npm -v
+      - run: npm pack ./
+      - run: npm publish ./
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
