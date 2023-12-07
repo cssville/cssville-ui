@@ -39,8 +39,8 @@ jobs:
       - run: npm install npm@latest -g
       - run: npm install typescript -g
       - run: npm install
-      - run: npm run build
       - run: npm run build:ts
+      - run: npm run build
       - run: npm -v
       - run: npm pack ./
       - run: npm publish ./
