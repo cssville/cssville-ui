@@ -1,15 +1,16 @@
 {
   "name": "cssville-ui",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "description": "",
   "files": [
     "LICENSE.md",
-    "build/ui",
+    "build/components/ui",
     "cssville-ui.bundle.css"
   ],
   "scripts": {
     "build": "webpack",
     "build:ts": "tsc",
+    "build:modifyCss": "node modifyCss.js",
     "watch:build": "webpack --watch",
     "watch:server": "lite-server -c lite-server-config.json",
     "start": "npm-run-all build build:ts --parallel watch:build watch:server --print-label"
