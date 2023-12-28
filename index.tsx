@@ -1,7 +1,6 @@
 import * as ReactDOM from 'react-dom/client';
 import React from 'react';
 import hljs from 'highlight.js';
-import "./site.css";
 import "cssville/cssville.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage } from './components/pages/HomePage';
