@@ -35,9 +35,9 @@ export const TypographyPage = (props) => {
       <Divider lg />
       <Text xl>Title sizes:</Text>
       <Title xl>Extra large title</Title>
-      <Title lg>Large body title</Title>
-      <Title md>Medium body title</Title>
-      <Title sm>Small body title</Title>
+      <Title lg>Large title</Title>
+      <Title md>Medium title</Title>
+      <Title sm>Small title</Title>
       <Title xs>Extra small title</Title>
 
       <Divider lg />
@@ -47,21 +47,21 @@ export const TypographyPage = (props) => {
       <Divider lg />
       <Text xl>Label sizes:</Text>
       <div className="d-flex w-12"><Label xl>Extra large label</Label></div>
-      <div className="d-flex w-12"><Label lg>Large body label</Label></div>
-      <div className="d-flex w-12"><Label md>Medium body label</Label></div>
-      <div className="d-flex w-12"><Label sm>Small body label</Label></div>
+      <div className="d-flex w-12"><Label lg>Large label</Label></div>
+      <div className="d-flex w-12"><Label md>Medium label</Label></div>
+      <div className="d-flex w-12"><Label sm>Small label</Label></div>
       <div className="d-flex w-12"><Label xs>Extra small label</Label></div>
 
       <Divider lg />
 
-      <Text xl>Default BodyText:</Text>
-      <Text>Default body text</Text>
+      <Text xl>Default Text:</Text>
+      <Text>Default text</Text>
       <Divider lg />
-      <Text xl>BodyText sizes:</Text>
+      <Text xl>Text sizes:</Text>
       <Text xl>Extra large text</Text>
-      <Text lg>Large body text</Text>
-      <Text md>Medium body text</Text>
-      <Text sm>Small body text</Text>
+      <Text lg>Large text</Text>
+      <Text md>Medium text</Text>
+      <Text sm>Small text</Text>
       <Text xs>Extra small text</Text>
     </CommonPage>
   );

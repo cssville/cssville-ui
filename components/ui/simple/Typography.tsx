@@ -2,16 +2,16 @@ import React from 'react';
 import { TextProps } from "../props/TextProps";
 import { buildSimpleComponent } from '../utils';
 
-const commonTextClasses = (props: TextProps) => {
+const commonTextClasses = (props: TextProps, boldByDefault: boolean = false) => {
   return [
     "m-0 color-text font-family-primary",
-    props.bold ? 'fw-bold' : 'fw-normal',
+    props.bold == null && boldByDefault || props.bold ? 'fw-bold' : 'fw-normal',
     props.centered ? 'text-align-center' : ''
   ];
 };
 
 export const Display: React.FC<TextProps> = (props) => buildSimpleComponent(props, "h1", [], [
-  ...commonTextClasses(props),
+  ...commonTextClasses(props, true),
   ['fs-4xl', 'fs-5xl', 'fs-6xl', 'fs-7xl', 'fs-8xl'],
   ['lh-4xl', 'lh-5xl', 'lh-6xl', 'lh-7xl', 'lh-8xl'],
   props.dynamic ? ['md-fs-3xl', 'md-fs-4xl', 'md-fs-5xl', 'md-fs-6xl', 'md-fs-7xl'] : [],
@@ -22,7 +22,7 @@ export const Display: React.FC<TextProps> = (props) => buildSimpleComponent(prop
 ]);
 
 export const Headline: React.FC<TextProps> = (props) => buildSimpleComponent(props, "h3", ['h5', 'h4', 'h3', 'h2', 'h1'], [
-  ...commonTextClasses(props),
+  ...commonTextClasses(props, true),
   ['fs-xl', 'fs-2xl', 'fs-3xl', 'fs-4xl', 'fs-5xl'],
   ['lh-xl', 'lh-2xl', 'lh-3xl', 'lh-4xl', 'lh-5xl'],
   props.dynamic ? ['md-fs-lg', 'md-fs-xl', 'md-fs-2xl', 'md-fs-3xl', 'md-fs-4xl'] : [],
@@ -47,7 +47,7 @@ export const Label: React.FC<TextProps> = (props) => buildSimpleComponent(props,
   ...commonTextClasses(props),
   ['fs-3xs', 'fs-2xs', 'fs-xs', 'fs-sm', 'fs-md'],
   ['lh-3xs', 'lh-2xs', 'lh-xs', 'lh-sm', 'lh-md'],
-  props.noPadding ? 'py-0' : ["py-1", "py-2", "py-3", "py-4", "py-5"]
+  props.noPadding ? 'py-0' : ["py-1", "py-2", "py-2", "py-3", "py-3"]
 ]);
 
 export const Text: React.FC<TextProps> = (props) => buildSimpleComponent(props, "p", [], [
