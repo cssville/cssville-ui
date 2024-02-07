@@ -5,7 +5,7 @@ import { buildSimpleComponent } from '../utils';
 const commonTextClasses = (props: TextProps) => {
   return [
     "m-0 color-text font-family-primary",
-    props.bold ? 'fw-bold' : 'fw-medium',
+    props.bold ? 'fw-bold' : 'fw-normal',
     props.centered ? 'text-align-center' : ''
   ];
 };

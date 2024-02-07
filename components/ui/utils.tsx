@@ -26,7 +26,8 @@ export function getValueByStyle(props: StyleProps, values: string[], defaultClas
               : defaultClassValue;
 }
 
-export function getValueBySize(props: SizeProps, values: string[], defaultClass: string = ""): string {
+export function getValueBySize(props: SizeProps, values: string[], 
+  defaultClass: string = ""): string {
   if (values.length < 5) {
     return defaultClass;
   }
@@ -44,7 +45,11 @@ export function getValueBySize(props: SizeProps, values: string[], defaultClass:
             : defaultClassValue;
 }
 
-export function buildSimpleComponent(props: BaseProps, defaultTag: string = "div", tagsArray: string[] = [], classesArray: (string | string[])[], excludeChildren: boolean = false): ReactElement {
+export function buildSimpleComponent(props: BaseProps,
+  defaultTag: string | React.ComponentClass<any, any> | React.FunctionComponent<any> = "div",
+  tagsArray: string[] = [],
+  classesArray: (string | string[])[],
+  excludeChildren: boolean = false): ReactElement {
   let classes = "";
   for (const item of classesArray) {
     let c = "";
@@ -61,7 +66,7 @@ export function buildSimpleComponent(props: BaseProps, defaultTag: string = "div
 
   const { className, tag, ...restProps } = props;
   const baseTag = "div";
-  const tagFromProps = tag || getValueBySize(props, tagsArray, defaultTag)
+  const tagFromProps = tag || getValueBySize(props, tagsArray, "")
   const Tag = tagFromProps === "" ? baseTag : tagFromProps;
 
   return (

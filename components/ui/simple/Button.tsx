@@ -23,9 +23,9 @@ export const Button: React.FC<ButtonProps> = (props) => {
     : props.outline ? outlineBtnClasses
       : outlineBtnClasses;
 
-  const { buttonText, startIcon, endIcon, icon, ...restProps } = props;
+  const { buttonText, startIcon, endIcon, icon, tag, ...restProps } = props;
 
-  const btn = buildSimpleComponent(restProps, "button", [], [
+  const btn = buildSimpleComponent(restProps, tag || "button", [], [
     "d-flex align-items-center justify-content-center text-decoration-none text-wrap-nowrap h-min-content",
     ['py-1', 'py-2', 'py-3', 'py-4', 'py-5'],
     props.disabled ? 'opacity-05 cursor-default' : 'cursor-pointer',
