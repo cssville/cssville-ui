@@ -3,7 +3,7 @@ import { BaseProps } from "../props/BaseProps";
 import { SectionProps } from "../props/SectionProps";
 import { buildSimpleComponent } from '../utils';
 
-export const Section: React.FC<SectionProps> = (props) => buildSimpleComponent(props, "div", [], [
+export const Section: React.FC<SectionProps> = (props) => buildSimpleComponent(props, "div", [
   "d-flex flex-direction-column position-relative mx-auto",
   props.fullWidth
     ? "w-12"

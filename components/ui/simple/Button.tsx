@@ -25,7 +25,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
 
   const { buttonText, startIcon, endIcon, icon, tag, ...restProps } = props;
 
-  const btn = buildSimpleComponent(restProps, tag || "button", [], [
+  const btn = buildSimpleComponent(restProps, tag || "button", [
     "d-flex align-items-center justify-content-center text-decoration-none text-wrap-nowrap h-min-content",
     ['py-1', 'py-2', 'py-3', 'py-4', 'py-5'],
     props.disabled ? 'opacity-05 cursor-default' : 'cursor-pointer',
@@ -47,7 +47,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
 
   const buttonChildren = []
   if (startIcon || icon) {
-    const iconWrapper = buildSimpleComponent(restProps, "span", [], [
+    const iconWrapper = buildSimpleComponent(restProps, "span", [
       ['h-12px', 'h-16px', 'h-24px', 'h-32px', 'h-40px'],
       ['w-12px', 'w-16px', 'w-24px', 'w-32px', 'w-40px'],
     ], true)
@@ -62,7 +62,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
     buttonChildren.push(buttonText ? buttonText : <ButtonText {...restProps}>{restProps.children}</ButtonText>)
 
   if (endIcon) {
-    const iconWrapper = buildSimpleComponent(restProps, "span", [], [
+    const iconWrapper = buildSimpleComponent(restProps, "span", [
       ['h-12px', 'h-16px', 'h-24px', 'h-32px', 'h-40px'],
       ['w-12px', 'w-16px', 'w-24px', 'w-32px', 'w-40px'],
     ], true)

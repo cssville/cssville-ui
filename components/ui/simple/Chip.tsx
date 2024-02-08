@@ -18,7 +18,7 @@ export const Chip: React.FC<ChipProps> = (props) => {
     : props.outline ? outlineChipClasses
       : outlineChipClasses;
 
-  return buildSimpleComponent(props, "span", [], [
+  return buildSimpleComponent(props, "span", [
     "d-inline-block font-family-code text-decoration-none",
     ['fs-2xs', 'fs-xs', 'fs-sm', 'fs-md', 'fs-lg'],
     ['lh-2xs', 'lh-xs', 'lh-sm', 'lh-md', 'lh-lg'],

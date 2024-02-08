@@ -46,8 +46,7 @@ export function getValueBySize(props: SizeProps, values: string[],
 }
 
 export function buildSimpleComponent(props: BaseProps,
-  defaultTag: string | React.ComponentClass<any, any> | React.FunctionComponent<any> = "div",
-  tagsArray: string[] = [],
+  customTag: string | React.ComponentClass<any, any> | React.FunctionComponent<any> = null,
   classesArray: (string | string[])[],
   excludeChildren: boolean = false): ReactElement {
   let classes = "";
@@ -65,9 +64,10 @@ export function buildSimpleComponent(props: BaseProps,
   }
 
   const { className, tag, ...restProps } = props;
-  const baseTag = "div";
-  const tagFromProps = tag || getValueBySize(props, tagsArray, "")
-  const Tag = tagFromProps === "" ? baseTag : tagFromProps;
+  if(customTag === null) {
+    customTag = "div";
+  }
+  const Tag = tag || customTag;
 
   return (
     <Tag className={`${classes}${props.className ? ` ${props.className}` : ''}`} {...restProps} >

@@ -14,7 +14,7 @@ export const ButtonText: React.FC<ButtonProps> = (props) => {
     : props.outline ? outlineTextClasses
       : outlineTextClasses;
 
-  var btnText = buildSimpleComponent(props, "span", [], [
+  var btnText = buildSimpleComponent(props, "span", [
     "text-decoration-none",
     ['fs-xs', 'fs-sm', 'fs-md', 'fs-lg', 'fs-xl'],
     ['lh-xs', 'lh-sm', 'lh-md', 'lh-lg', 'lh-xl'],

@@ -5,7 +5,7 @@ import { Spacer } from './Spacer';
 import { Divider } from './Divider';
 
 export const Column: React.FC<ColumnProps> = (props) => {
-  var row = buildSimpleComponent(props, "div", [], [
+  var row = buildSimpleComponent(props, "div", [
     "d-flex flex-direction-column align-items-center",
     ['py-2', 'py-3', 'py-4', 'py-5', 'py-6'],
     props.contentStart

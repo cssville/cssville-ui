@@ -4,7 +4,7 @@ import { buildSimpleComponent } from '../utils';
 import { Spacer } from './Spacer';
 
 export const Row: React.FC<RowProps> = (props) => {
-  var row = buildSimpleComponent(props, "div", [], [
+  var row = buildSimpleComponent(props, "div", [
     "d-flex flex-direction-row w-12 flex-wrap-wrap align-items-center",
     props.contentStart
       ? 'justify-content-start'
