@@ -1,14 +1,14 @@
 import React from 'react';
 import { Header } from '../Header';
 import { Section } from '../ui/simple/Section';
-import { Column } from '../ui/simple/Column';
+import { Stack } from '../ui/simple/Stack';
 
 export const HomePage = (props) => {
   return (
     <>
       <Header />
       <Section xl>
-        <Column>
+        <Stack column>
           {
             [
               ['Home', '/'],
@@ -20,7 +20,7 @@ export const HomePage = (props) => {
               </a>
             ))
           }
-        </Column>
+        </Stack>
       </Section>
     </>
   );

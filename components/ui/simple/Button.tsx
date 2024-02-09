@@ -2,7 +2,6 @@ import React from 'react';
 import { ButtonProps } from "../props/ButtonProps";
 import { buildSimpleComponent, getValueByStyle } from '../utils';
 import { ButtonText } from './ButtonText';
-import { Spacer } from './Spacer';
 
 export const Button: React.FC<ButtonProps> = (props) => {
   const outlineBtnClasses = [
@@ -28,6 +27,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
   const btn = buildSimpleComponent(restProps, tag || "button", [
     "d-flex align-items-center justify-content-center text-decoration-none text-wrap-nowrap h-min-content",
     ['py-1', 'py-2', 'py-3', 'py-4', 'py-5'],
+    ["gap-1", "gap-2", "gap-3", "gap-4", "gap-5"],
     props.disabled ? 'opacity-05 cursor-default' : 'cursor-pointer',
     props.noShadow ? 'box-shadow-none' : ['box-shadow-xs', 'box-shadow-sm', 'box-shadow-md', 'box-shadow-lg', 'box-shadow-xl'],
     props.rounded
@@ -53,7 +53,6 @@ export const Button: React.FC<ButtonProps> = (props) => {
     ], true)
     iconWrapper.props.children = icon ? icon : startIcon
     buttonChildren.push(iconWrapper)
-    buttonChildren.push(<Spacer {...restProps} />)
   }
 
   const addText = props.notext === undefined ? true : props.notext
@@ -67,7 +66,6 @@ export const Button: React.FC<ButtonProps> = (props) => {
       ['w-12px', 'w-16px', 'w-24px', 'w-32px', 'w-40px'],
     ], true)
     iconWrapper.props.children = endIcon
-    buttonChildren.push(<Spacer {...restProps} />)
     buttonChildren.push(iconWrapper)
   }
 
