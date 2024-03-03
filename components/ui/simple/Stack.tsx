@@ -19,7 +19,7 @@ export const Stack: React.FC<StackProps> = (props) => {
         ? 'justify-content-center'
         : props.contentEnd
           ? 'justify-content-end'
-          : '',
+          : 'justify-content-center',
     props.itemsStart
       ? 'align-items-start'
       : props.itemsCenter
