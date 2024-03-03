@@ -7,6 +7,10 @@ export interface StackProps extends BaseProps {
   contentStart?: boolean;
   contentEnd?: boolean;
   contentCenter?: boolean;
+  //align items
+  itemsStart?: boolean;
+  itemsEnd?: boolean;
+  itemsCenter?: boolean;
   row?: boolean;
   column?: boolean;
 }
