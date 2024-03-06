@@ -26,7 +26,7 @@ export const Stack: React.FC<StackProps> = (props) => {
         ? 'align-items-center'
         : props.itemsEnd
           ? 'align-items-end'
-          : 'align-items-center'
+          : 'align-items-start'
   ])
 
   return row;
