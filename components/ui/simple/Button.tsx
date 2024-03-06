@@ -27,7 +27,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
   const btn = buildSimpleComponent(restProps, tag || "button", [
     "d-flex align-items-center justify-content-center text-decoration-none text-wrap-nowrap h-min-content",
     ['py-1', 'py-2', 'py-3', 'py-4', 'py-5'],
-    ["gap-1", "gap-2", "gap-3", "gap-4", "gap-5"],
+    ["gap-2px", "gap-4px", "gap-8px", "gap-12px", "gap-16px"],
     props.disabled ? 'opacity-05 cursor-default' : 'cursor-pointer',
     props.noShadow ? 'box-shadow-none' : ['box-shadow-xs', 'box-shadow-sm', 'box-shadow-md', 'box-shadow-lg', 'box-shadow-xl'],
     props.rounded

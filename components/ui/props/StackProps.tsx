@@ -2,7 +2,7 @@ import { BaseProps } from "./BaseProps";
 
 
 export interface StackProps extends BaseProps {
-  noSpace?: boolean;
+  noGap?: boolean;
   //flex-wrap
   flexWrap?: boolean;
   noFlexWrap?: boolean;

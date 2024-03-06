@@ -10,9 +10,9 @@ export const Stack: React.FC<StackProps> = (props) => {
       : props.column
         ? 'flex-direction-column'
         : 'flex-direction-row',
-    props.noSpace
-      ? 'gap-0'
-      : ["gap-1", "gap-2", "gap-3", "gap-4", "gap-5"],
+    props.noGap
+      ? 'gap-0px'
+      : ["gap-8px", "gap-16px", "gap-24px", "gap-32px", "gap-48px"],
     props.contentStart
       ? 'justify-content-start'
       : props.contentCenter
