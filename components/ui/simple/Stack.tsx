@@ -4,7 +4,7 @@ import { StackProps } from '../props/StackProps';
 
 export const Stack: React.FC<StackProps> = (props) => {
   var row = buildSimpleComponent(props, "div", [
-    "d-flex w-12 flex-wrap-wrap",
+    "d-flex w-12",
     props.row
       ? 'flex-direction-row'
       : props.column
@@ -26,7 +26,9 @@ export const Stack: React.FC<StackProps> = (props) => {
         ? 'align-items-center'
         : props.itemsEnd
           ? 'align-items-end'
-          : 'align-items-start'
+          : 'align-items-start',
+    props.flexWrap ? 'flex-wrap-wrap' :
+      props.noFlexWrap ? 'flex-wrap-nowrap' : ''
   ])
 
   return row;
