@@ -9,7 +9,7 @@ export const Stack: React.FC<StackProps> = (props) => {
       ? 'flex-direction-row'
       : props.column
         ? 'flex-direction-column'
-        : 'flex-direction-row',
+        : 'flex-direction-column',
     props.noGap
       ? 'gap-0px'
       : ["gap-8px", "gap-16px", "gap-24px", "gap-32px", "gap-48px"],

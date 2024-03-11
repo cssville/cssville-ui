@@ -4,9 +4,9 @@ import { SectionProps } from "../props/SectionProps";
 import { buildSimpleComponent } from '../utils';
 
 export const Section: React.FC<SectionProps> = (props) => buildSimpleComponent(props, "div", [
-  "d-flex flex-direction-column position-relative mx-auto",
+  "d-flex flex-direction-column position-relative mx-auto w-12",
   props.fullWidth
-    ? "w-12"
+    ? ""
     : ['max-w-xs', 'max-w-sm', 'max-w-md', 'max-w-lg', 'max-w-xl'],
   props.noPadding ? 'p-0' : ['py-2', 'py-3', 'py-4', 'py-5', 'py-6'],
   props.noPadding ? '' : ['px-2', 'px-3', 'px-4', 'px-5', 'px-6'],
