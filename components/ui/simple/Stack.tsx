@@ -4,7 +4,7 @@ import { StackProps } from '../props/StackProps';
 
 export const Stack: React.FC<StackProps> = (props) => {
   var row = buildSimpleComponent(props, "div", [
-    "d-flex w-12",
+    "d-flex w-12 box-sizing-border-box",
     props.row
       ? 'flex-direction-row'
       : props.column
