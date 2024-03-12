@@ -3,6 +3,7 @@ import { BaseProps } from "./BaseProps";
 
 export interface StackProps extends BaseProps {
   noGap?: boolean;
+  fullWidth?: boolean;
   //flex-wrap
   flexWrap?: boolean;
   noFlexWrap?: boolean;
@@ -14,6 +15,7 @@ export interface StackProps extends BaseProps {
   itemsStart?: boolean;
   itemsEnd?: boolean;
   itemsCenter?: boolean;
+  //layout
   row?: boolean;
   column?: boolean;
 }
