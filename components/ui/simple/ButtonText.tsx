@@ -4,10 +4,10 @@ import { buildSimpleComponent, getValueByStyle } from '../utils';
 
 export const ButtonText: React.FC<ButtonProps> = (props) => {
   const outlineTextClasses = [
-    getValueByStyle(props, ['color-primary', 'color-secondary', 'color-success', 'color-info', 'color-warning', 'color-error'], 'color-text'),
+    getValueByStyle(props, ['col-primary', 'col-secondary', 'col-success', 'col-info', 'col-warning', 'col-error'], 'col-text'),
   ];
   const filledTextClasses = [
-    'color-bg',
+    'col-bg',
   ];
 
   const otherTextClasses = props.filled ? filledTextClasses
@@ -15,10 +15,10 @@ export const ButtonText: React.FC<ButtonProps> = (props) => {
       : outlineTextClasses;
 
   var btnText = buildSimpleComponent(props, "span", [
-    "text-decoration-none",
-    ['fs-xs', 'fs-sm', 'fs-md', 'fs-lg', 'fs-xl'],
-    ['lh-xs', 'lh-sm', 'lh-md', 'lh-lg', 'lh-xl'],
-    props.bold ? 'fw-bold' : '',
+    "tex-dec-none",
+    ['fon-siz-xs', 'fon-siz-sm', 'fon-siz-md', 'fon-siz-lg', 'fon-siz-xl'],
+    ['lin-hei-xs', 'lin-hei-sm', 'lin-hei-md', 'lin-hei-lg', 'lin-hei-xl'],
+    props.bold ? 'fon-wei-bold' : '',
     ...otherTextClasses
   ])
 

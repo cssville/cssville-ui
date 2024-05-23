@@ -15,8 +15,8 @@ export const HomePage = (props) => {
               ['Buttons', '/button'],
               ['Typography', '/typography'],
             ].map(([text, href]) => (
-              <a className="d-flex px-4 py-3 text-decoration-none bg-color-grey-100-hover br-4 color-blue-grey-900" href={href}>
-                <span className="fs-medium fw-bold">{text}</span>
+              <a className="dis-flex pad-x-4 pad-y-3 tex-dec-none bac-color-grey-100-hover bor-rad-4 col-blue-grey-900" href={href}>
+                <span className="fon-siz-medium fon-wei-bold">{text}</span>
               </a>
             ))
           }

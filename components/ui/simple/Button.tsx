@@ -5,18 +5,18 @@ import { ButtonText } from './ButtonText';
 
 export const Button: React.FC<ButtonProps> = (props) => {
   const outlineBtnClasses = [
-    getValueByStyle(props, ['color-primary', 'color-secondary', 'color-success', 'color-info', 'color-warning', 'color-error'], 'color-text'),
-    getValueByStyle(props, ['bg-color-bg-primary', 'bg-color-bg-secondary', 'bg-color-bg-success', 'bg-color-bg-info', 'bg-color-bg-warning', 'bg-color-bg-error'], 'bg-color-grey-50'),
+    getValueByStyle(props, ['col-primary', 'col-secondary', 'col-success', 'col-info', 'col-warning', 'col-error'], 'col-text'),
+    getValueByStyle(props, ['bac-col-bg-primary', 'bac-col-bg-secondary', 'bac-col-bg-success', 'bac-col-bg-info', 'bac-col-bg-warning', 'bac-col-bg-error'], 'bac-col-grey-50'),
     props.disabled
       ? ''
-      : getValueByStyle(props, ['bg-color-hover-primary-hover', 'bg-color-hover-secondary-hover', 'bg-color-hover-success-hover', 'bg-color-hover-info-hover', 'bg-color-hover-warning-hover', 'bg-color-hover-error-hover'], 'bg-color-grey-100-hover'),
-    getValueByStyle(props, ['border-color-border-primary', 'border-color-border-secondary', 'border-color-border-success', 'border-color-border-info', 'border-color-border-warning', 'border-color-border-error'], 'border-color-border'),
+      : getValueByStyle(props, ['bac-col-hover-primary-hover', 'bac-col-hover-secondary-hover', 'bac-col-hover-success-hover', 'bac-col-hover-info-hover', 'bac-col-hover-warning-hover', 'bac-col-hover-error-hover'], 'bac-col-grey-100-hover'),
+    getValueByStyle(props, ['bor-col-border-primary', 'bor-col-border-secondary', 'bor-col-border-success', 'bor-col-border-info', 'bor-col-border-warning', 'bor-col-border-error'], 'bor-col-border'),
   ];
   const filledBtnClasses = [
-    'color-bg',
-    getValueByStyle(props, ['bg-color-primary', 'bg-color-secondary', 'bg-color-success', 'bg-color-info', 'bg-color-warning', 'bg-color-error'], 'bg-color-text'),
+    'col-bg',
+    getValueByStyle(props, ['bac-col-primary', 'bac-col-secondary', 'bac-col-success', 'bac-col-info', 'bac-col-warning', 'bac-col-error'], 'bac-col-text'),
     'opacity-09-hover',
-    getValueByStyle(props, ['border-color-primary', 'border-color-secondary', 'border-color-success', 'border-color-info', 'border-color-warning', 'border-color-error'], 'border-color-bg'),
+    getValueByStyle(props, ['bor-col-primary', 'bor-col-secondary', 'bor-col-success', 'bor-col-info', 'bor-col-warning', 'bor-col-error'], 'bor-col-bg'),
   ];
   const otherBtnClasses = props.filled ? filledBtnClasses
     : props.outline ? outlineBtnClasses
@@ -25,31 +25,31 @@ export const Button: React.FC<ButtonProps> = (props) => {
   const { buttonText, startIcon, endIcon, icon, tag, ...restProps } = props;
 
   const btn = buildSimpleComponent(restProps, tag || "button", [
-    "d-flex align-items-center justify-content-center text-decoration-none text-wrap-nowrap h-min-content",
-    ['py-1', 'py-2', 'py-3', 'py-4', 'py-5'],
+    "dis-flex ali-ite-center jus-con-center tex-dec-none tex-wra-nowrap hei-min-content",
+    ['pad-y-1', 'pad-y-2', 'pad-y-3', 'pad-y-4', 'pad-y-5'],
     ["gap-2px", "gap-4px", "gap-8px", "gap-12px", "gap-16px"],
-    props.disabled ? 'opacity-05 cursor-default' : 'cursor-pointer',
-    props.noShadow ? 'box-shadow-none' : ['box-shadow-xs', 'box-shadow-sm', 'box-shadow-md', 'box-shadow-lg', 'box-shadow-xl'],
+    props.disabled ? 'opa-05 cur-default' : 'cur-pointer',
+    props.noShadow ? 'box-sha-none' : ['box-sha-xs', 'box-sha-sm', 'box-sha-md', 'box-sha-lg', 'box-sha-xl'],
     props.rounded
-      ? 'br-9999px'
-      : props.square ? 'br-0'
-        : ['br-2', 'br-3', 'br-4', 'br-5', 'br-5'],
+      ? 'bor-rad-9999px'
+      : props.square ? 'bor-rad-0'
+        : ['bor-rad-2', 'bor-rad-3', 'bor-rad-4', 'bor-rad-5', 'bor-rad-5'],
     props.rounded
-      ? ['px-3', 'px-4', 'px-5', 'px-6', 'px-7']
-      : ['px-2', 'px-3', 'px-4', 'px-5', 'px-6'],
-    props.bold ? 'fw-bold' : 'fw-500',
-    props.noBorder ? 'border-none' :
-      props.filled ? 'border-none'
-        : props.outline ? 'border-width-1px border-style-solid'
-          : 'border-width-1px border-style-solid',
+      ? ['pad-x-3', 'pad-x-4', 'pad-x-5', 'pad-x-6', 'pad-x-7']
+      : ['pad-x-2', 'pad-x-3', 'pad-x-4', 'pad-x-5', 'pad-x-6'],
+    props.bold ? 'fon-wei-bold' : 'fon-wei-500',
+    props.noBorder ? 'bor-none' :
+      props.filled ? 'bor-none'
+        : props.outline ? 'bor-wid-1px bor-sty-solid'
+          : 'bor-wid-1px bor-sty-solid',
     ...otherBtnClasses
   ])
 
   const buttonChildren = []
   if (startIcon || icon) {
     const iconWrapper = buildSimpleComponent(restProps, "span", [
-      ['h-12px', 'h-16px', 'h-24px', 'h-32px', 'h-40px'],
-      ['w-12px', 'w-16px', 'w-24px', 'w-32px', 'w-40px'],
+      ['hei-12px', 'hei-16px', 'hei-24px', 'hei-32px', 'hei-40px'],
+      ['wid-12px', 'wid-16px', 'wid-24px', 'wid-32px', 'wid-40px'],
     ], true)
     iconWrapper.props.children = icon ? icon : startIcon
     buttonChildren.push(iconWrapper)
@@ -62,8 +62,8 @@ export const Button: React.FC<ButtonProps> = (props) => {
 
   if (endIcon) {
     const iconWrapper = buildSimpleComponent(restProps, "span", [
-      ['h-12px', 'h-16px', 'h-24px', 'h-32px', 'h-40px'],
-      ['w-12px', 'w-16px', 'w-24px', 'w-32px', 'w-40px'],
+      ['hei-12px', 'hei-16px', 'hei-24px', 'hei-32px', 'hei-40px'],
+      ['wid-12px', 'wid-16px', 'wid-24px', 'wid-32px', 'wid-40px'],
     ], true)
     iconWrapper.props.children = endIcon
     buttonChildren.push(iconWrapper)

@@ -4,14 +4,14 @@ import { buildSimpleComponent, getValueByStyle } from '../utils';
 
 export const Chip: React.FC<ChipProps> = (props) => {
   const outlineChipClasses = [
-    getValueByStyle(props, ['color-primary', 'color-secondary', 'color-success', 'color-info', 'color-warning', 'color-error'], 'color-text'),
-    getValueByStyle(props, ['bg-color-bg-primary', 'bg-color-bg-secondary', 'bg-color-bg-success', 'bg-color-bg-info', 'bg-color-bg-warning', 'bg-color-bg-error'], 'bg-color-grey-50'),
-    getValueByStyle(props, ['border-color-border-primary', 'border-color-border-secondary', 'border-color-border-success', 'border-color-border-info', 'border-color-border-warning', 'border-color-border-error'], 'border-color-border'),
+    getValueByStyle(props, ['col-primary', 'col-secondary', 'col-success', 'col-info', 'col-warning', 'col-error'], 'col-text'),
+    getValueByStyle(props, ['bac-col-bg-primary', 'bac-col-bg-secondary', 'bac-col-bg-success', 'bac-col-bg-info', 'bac-col-bg-warning', 'bac-col-bg-error'], 'bac-col-grey-50'),
+    getValueByStyle(props, ['bor-col-border-primary', 'bor-col-border-secondary', 'bor-col-border-success', 'bor-col-border-info', 'bor-col-border-warning', 'bor-col-border-error'], 'bor-col-border'),
   ];
   const filledChipClasses = [
-    'color-bg',
-    getValueByStyle(props, ['bg-color-primary', 'bg-color-secondary', 'bg-color-success', 'bg-color-info', 'bg-color-warning', 'bg-color-error'], 'bg-color-text'),
-    getValueByStyle(props, ['border-color-primary', 'border-color-secondary', 'border-color-success', 'border-color-info', 'border-color-warning', 'border-color-error'], 'border-color-bg'),
+    'col-bg',
+    getValueByStyle(props, ['bac-col-primary', 'bac-col-secondary', 'bac-col-success', 'bac-col-info', 'bac-col-warning', 'bac-col-error'], 'bac-col-text'),
+    getValueByStyle(props, ['bor-col-primary', 'bor-col-secondary', 'bor-col-success', 'bor-col-info', 'bor-col-warning', 'bor-col-error'], 'bor-col-bg'),
   ];
 
   const other = props.filled ? filledChipClasses
@@ -19,23 +19,23 @@ export const Chip: React.FC<ChipProps> = (props) => {
       : outlineChipClasses;
 
   return buildSimpleComponent(props, "span", [
-    "d-inline-block font-family-code text-decoration-none",
-    ['fs-2xs', 'fs-xs', 'fs-sm', 'fs-md', 'fs-lg'],
-    ['lh-2xs', 'lh-xs', 'lh-sm', 'lh-md', 'lh-lg'],
-    ['py-0', 'py-1', 'py-1', 'py-2', 'py-3'],
-    props.disabled ? 'opacity-05' : '',
+    "dis-inline-block fon-fam-code tex-dec-none",
+    ['fon-siz-2xs', 'fon-siz-xs', 'fon-siz-sm', 'fon-siz-md', 'fon-siz-lg'],
+    ['lin-hei-2xs', 'lin-hei-xs', 'lin-hei-sm', 'lin-hei-md', 'lin-hei-lg'],
+    ['pad-y-0', 'pad-y-1', 'pad-y-1', 'pad-y-2', 'pad-y-3'],
+    props.disabled ? 'opa-05' : '',
     props.rounded
-      ? 'br-9999px'
-      : props.square ? 'br-0'
-        : ['br-1', 'br-2', 'br-3', 'br-3', 'br-4'],
+      ? 'bor-rad-9999px'
+      : props.square ? 'bor-rad-0'
+        : ['bor-rad-1', 'bor-rad-2', 'bor-rad-3', 'bor-rad-3', 'bor-rad-4'],
     props.rounded
-      ? ['px-2', 'px-3', 'px-4', 'px-4', 'px-5']
-      : ['px-2', 'px-2', 'px-3', 'px-3', 'px-4'],
-    props.bold ? 'fw-bold' : 'fw-500',
-    props.noBorder ? 'border-none' :
-      props.filled ? 'border-none'
-        : props.outline ? 'border-width-1px border-style-solid'
-          : 'border-width-1px border-style-solid',
+      ? ['pad-x-2', 'pad-x-3', 'pad-x-4', 'pad-x-4', 'pad-x-5']
+      : ['pad-x-2', 'pad-x-2', 'pad-x-3', 'pad-x-3', 'pad-x-4'],
+    props.bold ? 'fon-wei-bold' : 'fon-wei-500',
+    props.noBorder ? 'bor-none' :
+      props.filled ? 'bor-none'
+        : props.outline ? 'bor-wid-1px bor-sty-solid'
+          : 'bor-wid-1px bor-sty-solid',
     ...other
   ])
 };

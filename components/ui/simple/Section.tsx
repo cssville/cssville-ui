@@ -3,26 +3,26 @@ import { SectionProps } from "../props/SectionProps";
 import { buildSimpleComponent } from '../utils';
 
 export const Section: React.FC<SectionProps> = (props) => buildSimpleComponent(props, "div", [
-  "d-flex flex-direction-column position-relative mx-auto w-12 box-sizing-border-box",
+  "dis-flex fle-dir-column pos-relative mar-x-auto wid-12 box-siz-border-box",
   props.fullWidth
     ? ""
     : ['max-w-xs', 'max-w-sm', 'max-w-md', 'max-w-lg', 'max-w-xl'],
-  props.noPadding ? 'p-0' : ['py-3', 'py-4', 'py-5', 'py-6', 'py-7'],
-  props.noPadding ? '' : ['px-3', 'px-4', 'px-5', 'px-6', 'px-7'],
-  props.noPadding ? '' : ['lg-px-2', 'lg-px-3', 'lg-px-4', 'lg-px-5', 'lg-px-6'],
-  props.noPadding ? '' : ['md-px-1', 'md-px-2', 'md-px-3', 'md-px-4', 'md-px-5'],
+  props.noPadding ? 'p-0' : ['pad-y-3', 'pad-y-4', 'pad-y-5', 'pad-y-6', 'pad-y-7'],
+  props.noPadding ? '' : ['pad-x-3', 'pad-x-4', 'pad-x-5', 'pad-x-6', 'pad-x-7'],
+  props.noPadding ? '' : ['lg-pad-x-2', 'lg-pad-x-3', 'lg-pad-x-4', 'lg-pad-x-5', 'lg-pad-x-6'],
+  props.noPadding ? '' : ['md-pad-x-1', 'md-pad-x-2', 'md-pad-x-3', 'md-pad-x-4', 'md-pad-x-5'],
   props.itemsStart
-    ? 'align-items-start'
+    ? 'ali-ite-start'
     : props.itemsCenter
-      ? 'align-items-center'
+      ? 'ali-ite-center'
       : props.itemsEnd
-        ? 'align-items-end'
-        : 'align-items-start',
+        ? 'ali-ite-end'
+        : 'ali-ite-start',
   props.contentStart
-    ? 'justify-content-start'
+    ? 'jus-con-start'
     : props.contentCenter
-      ? 'justify-content-center'
+      ? 'jus-con-center'
       : props.contentEnd
-        ? 'justify-content-end'
-        : 'justify-content-start',
+        ? 'jus-con-end'
+        : 'jus-con-start',
 ]);

@@ -4,32 +4,32 @@ import { StackProps } from '../props/StackProps';
 
 export const Stack: React.FC<StackProps> = (props) => {
   var row = buildSimpleComponent(props, "div", [
-    "d-flex box-sizing-border-box",
-    props.fullWidth ? "w-12" : "",
+    "dis-flex box-siz-border-box",
+    props.fullWidth ? "wid-12" : "",
     props.row
-      ? 'flex-direction-row'
+      ? 'fle-dir-row'
       : props.column
-        ? 'flex-direction-column'
-        : 'flex-direction-column',
+        ? 'fle-dir-column'
+        : 'fle-dir-column',
     props.noGap
       ? 'gap-0px'
       : ["gap-8px", "gap-16px", "gap-24px", "gap-32px", "gap-48px"],
     props.contentStart
-      ? 'justify-content-start'
+      ? 'jus-con-start'
       : props.contentCenter
-        ? 'justify-content-center'
+        ? 'jus-con-center'
         : props.contentEnd
-          ? 'justify-content-end'
-          : 'justify-content-start',
+          ? 'jus-con-end'
+          : 'jus-con-start',
     props.itemsStart
-      ? 'align-items-start'
+      ? 'ali-ite-start'
       : props.itemsCenter
-        ? 'align-items-center'
+        ? 'ali-ite-center'
         : props.itemsEnd
-          ? 'align-items-end'
-          : 'align-items-start',
-    props.flexWrap ? 'flex-wrap-wrap' :
-      props.noFlexWrap ? 'flex-wrap-nowrap' : ''
+          ? 'ali-ite-end'
+          : 'ali-ite-start',
+    props.flexWrap ? 'fle-wra-wrap' :
+      props.noFlexWrap ? 'fle-wra-nowrap' : ''
   ])
 
   return row;

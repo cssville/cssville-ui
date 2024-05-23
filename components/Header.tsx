@@ -4,40 +4,40 @@ import { Button } from './ui/simple/Button';
 export const Header = (props: any) => {
   return (
     <>
-      <div className="position-fixed w-12 border-bottom-1 mb-6 h-64px md-h-inherit z-10 bg-color-white">
-        <div className="mx-auto max-w-xl px-6 lg-px-5 md-px-4">
-          <div className="d-flex flex-direction-row py-3 align-items-center justify-content-center">
-            <div className="d-flex align-items-center justify-content-center">
-              <a href="/" className="d-flex text-decoration-none color-green-500">
-                <img src="img/cssville.svg" alt="logo" className="h-32px w-32px py-3" />
-                <div className="d-flex align-items-center justify-content-center md-d-none pl-3">
-                  <span className="fw-900 fs-x-large font-family-code">cssville</span>
+      <div className="pos-fixed wid-12 bor-bot-1 mar-bot-6 hei-64px md-hei-inherit z-ind-10 bac-col-white">
+        <div className="mar-x-auto max-wid-xl pad-x-6 lg-pad-x-5 md-pad-x-4">
+          <div className="dis-flex fle-dir-row pad-y-3 ali-ite-center jus-con-center">
+            <div className="dis-flex ali-ite-center jus-con-center">
+              <a href="/" className="dis-flex tex-dec-none col-green-500">
+                <img src="img/cssville.svg" alt="logo" className="hei-32px wid-32px pad-y-3" />
+                <div className="dis-flex ali-ite-center jus-con-center md-dis-none pad-lef-3">
+                  <span className="fon-wei-900 fon-siz-x-large fon-fam-code">cssville</span>
                 </div>
               </a>
             </div>
-            <div className="md-d-none flex-grow-1"></div>
-            <div className="d-flex flex-direction-row md-flex-direction-column md-mx-auto align-items-center justify-content-center">
+            <div className="md-dis-none fle-gro-1"></div>
+            <div className="dis-flex fle-dir-row md-fle-dir-column md-mar-x-auto ali-ite-center jus-con-center">
               {
                 [
                   ['Home', '/'],
                   ['Buttons', '/button'],
                   ['Typography', '/typography'],
                 ].map(([text, href]) => (
-                  <a className="d-flex px-4 py-3 text-decoration-none bg-color-grey-100-hover br-4 color-blue-grey-900" href={href}>
-                    <span className="fs-medium fw-bold">{text}</span>
+                  <a className="dis-flex pad-x-4 pad-y-3 tex-dec-none bac-col-grey-100-hover bor-rad-4 col-blue-grey-900" href={href}>
+                    <span className="fon-siz-medium fon-wei-bold">{text}</span>
                   </a>
                 ))
               }
             </div>
             <Button bold tag={"a"} href="https://github.com/cssville/cssville" target="_blank" rel="noopener"
-              icon={<img src="img/mark-github.svg" alt="mark-github" className="h-100 w-100" />} >
+              icon={<img src="img/mark-github.svg" alt="mark-github" className="hei-100 wid-100" />} >
               Open source
             </Button>
           </div>
         </div>
       </div>
-      <div className="w-12 h-64px position-relative"></div>
-      <div className="w-12 h-64px d-none md-d-flex position-relative"></div>
+      <div className="wid-12 hei-64px pos-relative"></div>
+      <div className="wid-12 hei-64px dis-none md-dis-flex pos-relative"></div>
     </>
   );
 }
