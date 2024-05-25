@@ -6,7 +6,7 @@ export const Section: React.FC<SectionProps> = (props) => buildSimpleComponent(p
   "dis-flex fle-dir-column pos-relative mar-x-auto wid-12 box-siz-border-box",
   props.fullWidth
     ? ""
-    : ['max-w-xs', 'max-w-sm', 'max-w-md', 'max-w-lg', 'max-w-xl'],
+    : ['max-wid-xs', 'max-wid-sm', 'max-wid-md', 'max-wid-lg', 'max-wid-xl'],
   props.noPadding ? 'p-0' : ['pad-y-3', 'pad-y-4', 'pad-y-5', 'pad-y-6', 'pad-y-7'],
   props.noPadding ? '' : ['pad-x-3', 'pad-x-4', 'pad-x-5', 'pad-x-6', 'pad-x-7'],
   props.noPadding ? '' : ['lg-pad-x-2', 'lg-pad-x-3', 'lg-pad-x-4', 'lg-pad-x-5', 'lg-pad-x-6'],
