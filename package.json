@@ -1,6 +1,6 @@
 {
   "name": "cssville-ui",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "description": "",
   "files": [
     "LICENSE.md",
@@ -8,12 +8,15 @@
     "cssville-ui.bundle.css"
   ],
   "scripts": {
-    "build": "webpack",
+    "build:prod": "cross-env NODE_ENV=production webpack",
+    "build:dev": "cross-env NODE_ENV=development webpack",
     "build:ts": "tsc",
     "build:modifyCss": "node modifyCss.js",
-    "watch:build": "webpack --watch",
+    "watch:build:prod": "cross-env NODE_ENV=production webpack --watch",
+    "watch:build:dev": "cross-env NODE_ENV=development webpack --watch",
     "watch:server": "lite-server -c lite-server-config.json",
-    "start": "npm-run-all build build:ts --parallel watch:build watch:server --print-label"
+    "start:prod": "npm-run-all build:prod build:ts --parallel watch:build:prod watch:server --print-label",
+    "start:dev": "npm-run-all build:dev build:ts --parallel watch:build:dev watch:server --print-label"
   },
   "repository": {
     "type": "git",
@@ -36,14 +39,15 @@
     "react-router-dom": "^6.16.0"
   },
   "devDependencies": {
-    "express": "^4.18.2",
     "@types/highlight.js": "^10.1.0",
     "@types/node": "^16.6.2",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "copyfiles": "^2.4.1",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.8.1",
     "css-minimizer-webpack-plugin": "^5.0.1",
+    "express": "^4.18.2",
     "glob-all": "^3.3.1",
     "highlight.js": "^11.7.0",
     "lite-server": "^2.6.1",

@@ -1,35 +1,45 @@
 import React from 'react';
-import { buildSimpleComponent } from '../utils';
+import { buildSimpleComponent, getValueByStyle, splitPropsIntoGroups } from '../utils';
 import { StackProps } from '../props/StackProps';
+import { StackPropsKeys } from "../props/StackProps";
+import { BasePropsKeys } from "../props/BaseProps";
+import { SizePropsKeys } from "../props/SizeProps";
 
 export const Stack: React.FC<StackProps> = (props) => {
-  var row = buildSimpleComponent(props, "div", [
+
+  const { stackProps, baseProps, sizeProps, remainingProps } = splitPropsIntoGroups(props, {
+    stackProps: StackPropsKeys,
+    baseProps: BasePropsKeys,
+    sizeProps: SizePropsKeys
+  });
+
+  var row = buildSimpleComponent(baseProps, sizeProps, remainingProps, "div", [
     "dis-flex box-siz-border-box",
-    props.fullWidth ? "wid-12" : "",
-    props.row
+    stackProps.fullWidth ? "wid-12" : "",
+    stackProps.row
       ? 'fle-dir-row'
-      : props.column
+      : stackProps.column
         ? 'fle-dir-column'
         : 'fle-dir-column',
-    props.noGap
+    stackProps.noGap
       ? 'gap-0px'
       : ["gap-8px", "gap-16px", "gap-24px", "gap-32px", "gap-48px"],
-    props.contentStart
+    stackProps.contentStart
       ? 'jus-con-start'
-      : props.contentCenter
+      : stackProps.contentCenter
         ? 'jus-con-center'
-        : props.contentEnd
+        : stackProps.contentEnd
           ? 'jus-con-end'
           : 'jus-con-start',
-    props.itemsStart
+    stackProps.itemsStart
       ? 'ali-ite-start'
-      : props.itemsCenter
+      : stackProps.itemsCenter
         ? 'ali-ite-center'
-        : props.itemsEnd
+        : stackProps.itemsEnd
           ? 'ali-ite-end'
           : 'ali-ite-start',
-    props.flexWrap ? 'fle-wra-wrap' :
-      props.noFlexWrap ? 'fle-wra-nowrap' : ''
+    stackProps.flexWrap ? 'fle-wra-wrap' :
+      stackProps.noFlexWrap ? 'fle-wra-nowrap' : ''
   ])
 
   return row;

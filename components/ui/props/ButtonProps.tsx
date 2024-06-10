@@ -7,6 +7,7 @@ export interface ButtonProps extends StyleProps {
   icon?: ReactElement;
   startIcon?: ReactElement;
   endIcon?: ReactElement;
+
   disabled?: boolean;
   rounded?: boolean;
   square?: boolean;
@@ -19,3 +20,5 @@ export interface ButtonProps extends StyleProps {
   bold?: boolean;
   notext?: boolean;
 }
+
+export const ButtonPropsKeys: (keyof ButtonProps)[] = ["buttonText", "icon", "startIcon", "endIcon", "disabled", "rounded", "square", "noBorder", "noShadow", "outline", "filled", "bold", "notext"]

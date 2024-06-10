@@ -19,3 +19,5 @@ export interface StackProps extends BaseProps {
   row?: boolean;
   column?: boolean;
 }
+
+export const StackPropsKeys: (keyof StackProps)[] = ["noGap", "fullWidth", "flexWrap", "noFlexWrap", "contentStart", "contentCenter", "contentEnd", "itemsStart", "itemsCenter", "itemsEnd", "row", "column"]

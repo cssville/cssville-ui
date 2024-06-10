@@ -9,3 +9,5 @@ export interface StyleProps extends BaseProps {
   warning?: boolean;
   error?: boolean;
 }
+
+export const StylePropsKeys: (keyof StyleProps)[] = ["primary", "secondary", "success", "info", "warning", "error"]

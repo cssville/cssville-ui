@@ -12,3 +12,5 @@ export interface ChipProps extends StyleProps {
   //text:
   bold?: boolean;
 }
+
+export const ChipPropsKeys: (keyof ChipProps)[] = ["disabled", "rounded", "square", "noBorder", "outline", "filled", "bold"]

@@ -13,3 +13,5 @@ export interface SectionProps extends BaseProps {
   itemsEnd?: boolean;
   itemsCenter?: boolean;
 }
+
+export const SectionPropsKeys: (keyof SectionProps)[] = ["fullWidth", "noPadding", "contentStart", "contentCenter", "contentEnd", "itemsStart", "itemsCenter", "itemsEnd"]

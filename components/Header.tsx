@@ -23,7 +23,7 @@ export const Header = (props: any) => {
                   ['Buttons', '/button'],
                   ['Typography', '/typography'],
                 ].map(([text, href]) => (
-                  <a className="dis-flex pad-x-4 pad-y-3 tex-dec-none bac-col-grey-100-hover bor-rad-4 col-blue-grey-900" href={href}>
+                  <a key={href} className="dis-flex pad-x-4 pad-y-3 tex-dec-none bac-col-grey-100-hover bor-rad-4 col-blue-grey-900" href={href}>
                     <span className="fon-siz-medium fon-wei-bold">{text}</span>
                   </a>
                 ))

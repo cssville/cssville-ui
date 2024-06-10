@@ -5,3 +5,5 @@ export interface SizeProps {
   lg?: boolean;
   xl?: boolean;
 }
+
+export const SizePropsKeys: (keyof SizeProps)[] = ["xs", "sm", "md", "lg", "xl"]

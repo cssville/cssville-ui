@@ -22,7 +22,7 @@ export const ButtonPage = (props) => {
 
       <Text xl>Button with custom text:</Text>
       <Stack>
-        <Button buttonText={<span className="fon-wei-bold fon-siz-large col-green-500 tex-dec-underline">Custom text element</span>} />
+        <Button buttonText={<span key="text" className="fon-wei-bold fon-siz-large col-green-500 tex-dec-underline">Custom text element</span>} />
       </Stack>
 
       <Divider lg />

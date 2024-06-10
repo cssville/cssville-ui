@@ -4,6 +4,7 @@ import { BaseProps } from "./props/BaseProps";
 import { StyleProps } from "./props/StyleProps";
 import React from "react";
 
+
 export function getValueByStyle(props: StyleProps, values: string[], defaultClass: string = ""): string {
   if (values.length < 6) {
     return defaultClass;
@@ -14,9 +15,7 @@ export function getValueByStyle(props: StyleProps, values: string[], defaultClas
   const infoClass = values[3];
   const warningClass = values[4];
   const errorClass = values[5];
-
   const defaultClassValue = defaultClass === "" ? primaryClass : defaultClass;
-
   return props.primary ? primaryClass
     : props.secondary ? secondaryClass
       : props.success ? successClass
@@ -26,7 +25,7 @@ export function getValueByStyle(props: StyleProps, values: string[], defaultClas
               : defaultClassValue;
 }
 
-export function getValueBySize(props: SizeProps, values: string[], 
+export function getValueBySize(props: SizeProps, values: string[],
   defaultClass: string = ""): string {
   if (values.length < 5) {
     return defaultClass;
@@ -45,10 +44,12 @@ export function getValueBySize(props: SizeProps, values: string[],
             : defaultClassValue;
 }
 
-export function buildSimpleComponent(props: BaseProps,
+export function buildSimpleComponent(baseProps: BaseProps, sizeProps: SizeProps, remainingProps: React.HTMLProps<HTMLElement>,
   customTag: string | React.ComponentClass<any, any> | React.FunctionComponent<any> = null,
   classesArray: (string | string[])[],
-  excludeChildren: boolean = false): ReactElement {
+  excludeChildren: boolean = false,
+  children?: React.ReactNode,
+  key?: string): ReactElement {
   let classes = "";
   for (const item of classesArray) {
     let c = "";
@@ -56,22 +57,54 @@ export function buildSimpleComponent(props: BaseProps,
       c = item;
     }
     else {
-      c = getValueBySize(props, item)
+      c = getValueBySize(sizeProps, item)
     }
     if (c !== "") {
       classes += (classes === "" ? c : ` ${c}`);
     }
   }
 
-  const { className, tag, ...restProps } = props;
-  if(customTag === null) {
+  const { className, ...restProps } = remainingProps;
+  if (customTag === null) {
     customTag = "div";
   }
-  const Tag = tag || customTag;
+  const Tag = baseProps?.tag || customTag;
 
   return (
-    <Tag className={`${classes}${props.className ? ` ${props.className}` : ''}`} {...restProps} >
-      {!excludeChildren && props.children}
+    <Tag key={key} className={`${classes}${remainingProps.className ? ` ${remainingProps.className}` : ''}`} {...restProps} >
+      {!excludeChildren && (children || remainingProps.children)}
     </Tag>
   );
+}
+
+type PropsGroups<T> = {
+  [K in keyof T]: Partial<Record<string, any>>;
+} & { remainingProps: Partial<Record<string, any>> };
+
+export function splitPropsIntoGroups<T extends object>(
+  props: T,
+  keysGroups: { [key: string]: (keyof T)[] }
+): PropsGroups<{ [key: string]: (keyof T)[] }> {
+  const result: PropsGroups<{ [key: string]: (keyof T)[] }> = { remainingProps: {} } as PropsGroups<{ [key: string]: (keyof T)[] }>;
+
+  Object.keys(keysGroups).forEach(groupKey => {
+    const keys = keysGroups[groupKey];
+    result[groupKey] = {};
+
+    keys.forEach(key => {
+      if (key in props) {
+        (result[groupKey] as any)[key] = (props as any)[key];
+      }
+    });
+  });
+
+  // Collect remaining props
+  Object.keys(props).forEach(key => {
+    const isAssigned = Object.values(keysGroups).some(keys => keys.includes(key as keyof T));
+    if (!isAssigned) {
+      (result.remainingProps as any)[key] = (props as any)[key];
+    }
+  });
+
+  return result;
 }
