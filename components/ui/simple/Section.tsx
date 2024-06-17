@@ -13,7 +13,7 @@ export const Section: React.FC<SectionProps> = (props) => {
   });
 
   var section = buildSimpleComponent(baseProps, sizeProps, remainingProps, "div", [
-    "dis-flex fle-dir-column pos-relative mar-x-auto wid-12 box-siz-border-box",
+    "dis-flex fle-dir-column pos-relative mar-x-auto wid-full box-siz-border-box",
     stackProps.fullWidth
       ? ""
       : ['max-wid-xs', 'max-wid-sm', 'max-wid-md', 'max-wid-lg', 'max-wid-xl'],

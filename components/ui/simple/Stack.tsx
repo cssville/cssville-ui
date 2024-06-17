@@ -15,15 +15,15 @@ export const Stack: React.FC<StackProps> = (props) => {
 
   var row = buildSimpleComponent(baseProps, sizeProps, remainingProps, "div", [
     "dis-flex box-siz-border-box",
-    stackProps.fullWidth ? "wid-12" : "",
+    stackProps.fullWidth ? "wid-full" : "",
     stackProps.row
       ? 'fle-dir-row'
       : stackProps.column
         ? 'fle-dir-column'
         : 'fle-dir-column',
     stackProps.noGap
-      ? 'gap-0px'
-      : ["gap-8px", "gap-16px", "gap-24px", "gap-32px", "gap-48px"],
+      ? 'gap-0'
+      : ["gap-3", "gap-5", "gap-6", "gap-7", "gap-9"],
     stackProps.contentStart
       ? 'jus-con-start'
       : stackProps.contentCenter

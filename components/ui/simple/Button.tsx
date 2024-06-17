@@ -16,9 +16,9 @@ export const Button: React.FC<ButtonProps> = (props) => {
 
   const buttonChildren: React.ReactNode[] = [];
   if (buttonProps.startIcon || buttonProps.icon) {
-    const iconWrapper = buildSimpleComponent(null, sizeProps, buttonProps.icon ? buttonProps.icon.props : [], "span", [
-      ['hei-12px', 'hei-16px', 'hei-24px', 'hei-32px', 'hei-40px'],
-      ['wid-12px', 'wid-16px', 'wid-24px', 'wid-32px', 'wid-40px'],
+    const iconWrapper = buildSimpleComponent(null, sizeProps, {}, "span", [
+      ['hei-4', 'hei-5', 'hei-6', 'hei-7', 'hei-8'],
+      ['wid-4', 'wid-5', 'wid-6', 'wid-7', 'wid-8'],
     ], false, buttonProps.icon ? buttonProps.icon : buttonProps.startIcon, "btn-icon")
     buttonChildren.push(iconWrapper);
   }
@@ -34,7 +34,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
       : buttonProps.outline ? outlineTextClasses
         : outlineTextClasses;
 
-    var btnText = buildSimpleComponent(null, sizeProps, buttonProps.buttonText ? buttonProps.buttonText.props : [], "span", [
+    var btnText = buildSimpleComponent(null, sizeProps, buttonProps.buttonText ? buttonProps.buttonText.props : {}, "span", [
       "tex-dec-none",
       ['fon-siz-xs', 'fon-siz-sm', 'fon-siz-md', 'fon-siz-lg', 'fon-siz-xl'],
       ['lin-hei-xs', 'lin-hei-sm', 'lin-hei-md', 'lin-hei-lg', 'lin-hei-xl'],
@@ -46,19 +46,19 @@ export const Button: React.FC<ButtonProps> = (props) => {
   }
 
   if (buttonProps.endIcon) {
-    const endIconWrapper = buildSimpleComponent(null, sizeProps, buttonProps.endIcon.props, "span", [
-      ['hei-12px', 'hei-16px', 'hei-24px', 'hei-32px', 'hei-40px'],
-      ['wid-12px', 'wid-16px', 'wid-24px', 'wid-32px', 'wid-40px'],
+    const endIconWrapper = buildSimpleComponent(null, sizeProps, {}, "span", [
+      ['hei-4', 'hei-5', 'hei-6', 'hei-7', 'hei-8'],
+      ['wid-4', 'wid-5', 'wid-6', 'wid-7', 'wid-8'],
     ], false, buttonProps.endIcon, "btn-end-icon")
     buttonChildren.push(endIconWrapper);
   }
 
   const outlineBtnClasses = [
     getValueByStyle(styleProps, ['col-primary', 'col-secondary', 'col-success', 'col-info', 'col-warning', 'col-error'], 'col-text'),
-    getValueByStyle(styleProps, ['bac-col-bg-primary', 'bac-col-bg-secondary', 'bac-col-bg-success', 'bac-col-bg-info', 'bac-col-bg-warning', 'bac-col-bg-error'], 'bac-col-grey-50'),
+    getValueByStyle(styleProps, ['bac-col-bg-primary', 'bac-col-bg-secondary', 'bac-col-bg-success', 'bac-col-bg-info', 'bac-col-bg-warning', 'bac-col-bg-error'], 'bac-col-transparent'),
     buttonProps.disabled
       ? ''
-      : getValueByStyle(styleProps, ['bac-col-hover-primary-hover', 'bac-col-hover-secondary-hover', 'bac-col-hover-success-hover', 'bac-col-hover-info-hover', 'bac-col-hover-warning-hover', 'bac-col-hover-error-hover'], 'bac-col-grey-100-hover'),
+      : getValueByStyle(styleProps, ['bac-col-hover-primary-hover', 'bac-col-hover-secondary-hover', 'bac-col-hover-success-hover', 'bac-col-hover-info-hover', 'bac-col-hover-warning-hover', 'bac-col-hover-error-hover'], 'bac-col-grey-50-hover'),
     getValueByStyle(styleProps, ['bor-col-border-primary', 'bor-col-border-secondary', 'bor-col-border-success', 'bor-col-border-info', 'bor-col-border-warning', 'bor-col-border-error'], 'bor-col-border'),
   ];
   const filledBtnClasses = [
@@ -76,7 +76,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
   return buildSimpleComponent(baseProps, sizeProps, remainingProps, baseProps.tag || "button", [
     "dis-flex ali-ite-center jus-con-center tex-dec-none tex-wra-nowrap hei-min-content",
     ['pad-y-1', 'pad-y-2', 'pad-y-3', 'pad-y-4', 'pad-y-5'],
-    ["gap-2px", "gap-4px", "gap-8px", "gap-12px", "gap-16px"],
+    ["gap-1", "gap-2", "gap-3", "gap-4", "gap-5"],
     buttonProps.disabled ? 'opa-05 cur-default' : 'cur-pointer',
     buttonProps.noShadow ? 'box-sha-none' : ['box-sha-xs', 'box-sha-sm', 'box-sha-md', 'box-sha-lg', 'box-sha-xl'],
     buttonProps.rounded

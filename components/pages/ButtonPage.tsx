@@ -6,7 +6,7 @@ import { Text } from '../ui/simple/Typography';
 import { Stack } from '../ui/simple/Stack';
 
 export const ButtonPage = (props) => {
-  const ghIcon = <img src="img/mark-github.svg" alt="mark-github" className="hei-100 wid-100" />;
+  const ghIcon = <img src="img/mark-github.svg" alt="mark-github" className="hei-100 wid-full" />;
   return (
     <CommonPage title="Button">
       <Text xl>Default button:</Text>
