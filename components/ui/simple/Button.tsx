@@ -23,7 +23,9 @@ export const Button: React.FC<ButtonProps> = (props) => {
     buttonChildren.push(iconWrapper);
   }
 
-  if (buttonProps.notext === undefined ? true : buttonProps.notext) {
+  const buttonHasChildren = buttonProps.buttonText || remainingProps.children !== undefined;
+
+  if (buttonHasChildren) {
 
     const outlineTextClasses = [
       getValueByStyle(remainingProps, ['col-primary', 'col-secondary', 'col-success', 'col-info', 'col-warning', 'col-error'], 'col-text'),
@@ -34,7 +36,9 @@ export const Button: React.FC<ButtonProps> = (props) => {
       : buttonProps.outline ? outlineTextClasses
         : outlineTextClasses;
 
-    var btnText = buildSimpleComponent(null, sizeProps, buttonProps.buttonText ? buttonProps.buttonText.props : {}, "span", [
+    const remainingTextProps = buttonProps.buttonText?.props ?? {};
+
+    var btnText = buildSimpleComponent(null, sizeProps, remainingTextProps, "span", [
       "tex-dec-none",
       ['fon-siz-xs', 'fon-siz-sm', 'fon-siz-md', 'fon-siz-lg', 'fon-siz-xl'],
       ['lin-hei-xs', 'lin-hei-sm', 'lin-hei-md', 'lin-hei-lg', 'lin-hei-xl'],
@@ -83,9 +87,12 @@ export const Button: React.FC<ButtonProps> = (props) => {
       ? 'bor-rad-9999px'
       : buttonProps.square ? 'bor-rad-0'
         : ['bor-rad-2', 'bor-rad-3', 'bor-rad-4', 'bor-rad-5', 'bor-rad-5'],
-    buttonProps.rounded
-      ? ['pad-x-3', 'pad-x-4', 'pad-x-5', 'pad-x-6', 'pad-x-7']
-      : ['pad-x-2', 'pad-x-3', 'pad-x-4', 'pad-x-5', 'pad-x-6'],
+    buttonHasChildren
+      ? buttonProps.rounded
+        ? ['pad-x-3', 'pad-x-4', 'pad-x-5', 'pad-x-6', 'pad-x-7']
+        : ['pad-x-2', 'pad-x-3', 'pad-x-4', 'pad-x-5', 'pad-x-6']
+      // Icon button has the same horizontal padding as vertical:
+      : ['pad-x-1', 'pad-x-2', 'pad-x-3', 'pad-x-4', 'pad-x-5'],
     buttonProps.bold ? 'fon-wei-bold' : 'fon-wei-500',
     buttonProps.noBorder ? 'bor-none' :
       buttonProps.filled ? 'bor-none'
