@@ -45,8 +45,8 @@ export const Chip: React.FC<ChipProps> = (props) => {
     chipProps.bold ? 'fon-wei-bold' : 'fon-wei-500',
     chipProps.noBorder ? 'bor-none' :
       chipProps.filled ? 'bor-none'
-        : chipProps.outline ? 'bor-wid-1px bor-sty-solid'
-          : 'bor-wid-1px bor-sty-solid',
+        : chipProps.outline ? 'bor-wid-1 bor-sty-solid'
+          : 'bor-wid-1 bor-sty-solid',
     ...other
   ])
 };

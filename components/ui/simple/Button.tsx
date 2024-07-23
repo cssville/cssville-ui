@@ -96,8 +96,8 @@ export const Button: React.FC<ButtonProps> = (props) => {
     buttonProps.bold ? 'fon-wei-bold' : 'fon-wei-500',
     buttonProps.noBorder ? 'bor-none' :
       buttonProps.filled ? 'bor-none'
-        : buttonProps.outline ? 'bor-wid-1px bor-sty-solid'
-          : 'bor-wid-1px bor-sty-solid',
+        : buttonProps.outline ? 'bor-wid-1 bor-sty-solid'
+          : 'bor-wid-1 bor-sty-solid',
     ...otherBtnClasses
   ], false, buttonChildren);
 };
