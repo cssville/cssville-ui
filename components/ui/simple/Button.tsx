@@ -17,8 +17,8 @@ export const Button: React.FC<ButtonProps> = (props) => {
   const buttonChildren: React.ReactNode[] = [];
   if (buttonProps.startIcon || buttonProps.icon) {
     const iconWrapper = buildSimpleComponent(null, sizeProps, {}, "span", [
-      ['hei-4', 'hei-5', 'hei-6', 'hei-7', 'hei-8'],
-      ['wid-4', 'wid-5', 'wid-6', 'wid-7', 'wid-8'],
+      ['hei-5', 'hei-6', 'hei-7', 'hei-8', 'hei-9'],
+      ['wid-5', 'wid-6', 'wid-7', 'wid-8', 'wid-9'],
     ], false, buttonProps.icon ? buttonProps.icon : buttonProps.startIcon, "btn-icon")
     buttonChildren.push(iconWrapper);
   }
@@ -28,9 +28,9 @@ export const Button: React.FC<ButtonProps> = (props) => {
   if (buttonHasChildren) {
 
     const outlineTextClasses = [
-      getValueByStyle(remainingProps, ['col-primary', 'col-secondary', 'col-success', 'col-info', 'col-warning', 'col-error'], 'col-text'),
+      getValueByStyle(styleProps, ['col-primary', 'col-secondary', 'col-success', 'col-info', 'col-warning', 'col-error'], 'col-text'),
     ];
-    const filledTextClasses = ['col-bg',];
+    const filledTextClasses = ['col-bg'];
 
     const otherTextClasses = buttonProps.filled ? filledTextClasses
       : buttonProps.outline ? outlineTextClasses
@@ -51,8 +51,8 @@ export const Button: React.FC<ButtonProps> = (props) => {
 
   if (buttonProps.endIcon) {
     const endIconWrapper = buildSimpleComponent(null, sizeProps, {}, "span", [
-      ['hei-4', 'hei-5', 'hei-6', 'hei-7', 'hei-8'],
-      ['wid-4', 'wid-5', 'wid-6', 'wid-7', 'wid-8'],
+      ['hei-5', 'hei-6', 'hei-7', 'hei-8', 'hei-9'],
+      ['wid-5', 'wid-6', 'wid-7', 'wid-8', 'wid-9'],
     ], false, buttonProps.endIcon, "btn-end-icon")
     buttonChildren.push(endIconWrapper);
   }
@@ -79,20 +79,20 @@ export const Button: React.FC<ButtonProps> = (props) => {
 
   return buildSimpleComponent(baseProps, sizeProps, remainingProps, baseProps.tag || "button", [
     "dis-flex ali-ite-center jus-con-center tex-dec-none tex-wra-nowrap hei-min-content",
-    ['pad-y-1', 'pad-y-2', 'pad-y-3', 'pad-y-4', 'pad-y-5'],
-    ["gap-1", "gap-2", "gap-3", "gap-4", "gap-5"],
+    ['pad-y-2', 'pad-y-3', 'pad-y-4', 'pad-y-5', 'pad-y-6'],
+    ["gap-2", "gap-3", "gap-4", "gap-5", "gap-6"],
     buttonProps.disabled ? 'opa-05 cur-default' : 'cur-pointer',
     buttonProps.noShadow ? 'box-sha-none' : ['box-sha-xs', 'box-sha-sm', 'box-sha-md', 'box-sha-lg', 'box-sha-xl'],
     buttonProps.rounded
       ? 'bor-rad-9999px'
       : buttonProps.square ? 'bor-rad-0'
-        : ['bor-rad-2', 'bor-rad-3', 'bor-rad-4', 'bor-rad-5', 'bor-rad-5'],
+        : ['bor-rad-3', 'bor-rad-4', 'bor-rad-5', 'bor-rad-6', 'bor-rad-7'],
     buttonHasChildren
       ? buttonProps.rounded
-        ? ['pad-x-3', 'pad-x-4', 'pad-x-5', 'pad-x-6', 'pad-x-7']
-        : ['pad-x-2', 'pad-x-3', 'pad-x-4', 'pad-x-5', 'pad-x-6']
+        ? ['pad-x-4', 'pad-x-5', 'pad-x-6', 'pad-x-7', 'pad-x-8']
+        : ['pad-x-3', 'pad-x-4', 'pad-x-5', 'pad-x-6', 'pad-x-7']
       // Icon button has the same horizontal padding as vertical:
-      : ['pad-x-1', 'pad-x-2', 'pad-x-3', 'pad-x-4', 'pad-x-5'],
+      : ['pad-x-2', 'pad-x-3', 'pad-x-4', 'pad-x-5', 'pad-x-6'],
     buttonProps.bold ? 'fon-wei-bold' : 'fon-wei-500',
     buttonProps.noBorder ? 'bor-none' :
       buttonProps.filled ? 'bor-none'

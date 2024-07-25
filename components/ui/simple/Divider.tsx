@@ -14,7 +14,7 @@ export const Divider: React.FC<DividerProps> = (props) => {
 
   return buildSimpleComponent(baseProps, sizeProps, remainingProps, "div", [
     "wid-full",
-    ['mar-y-2', 'mar-y-3', 'mar-y-4', 'mar-y-5', 'mar-y-6'],
+    ['mar-y-3', 'mar-y-4', 'mar-y-5', 'mar-y-6', 'mar-y-7'],
     dividerProps.noBorder ? 'hei-1px bg-col-transparent' : 'border-bottom-1'
   ], true);
 }

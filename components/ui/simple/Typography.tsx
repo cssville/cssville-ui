@@ -26,7 +26,7 @@ export const Display: React.FC<TextProps> = (props) => {
     textProps.dynamic ? ['md-lin-hei-3xl', 'md-lin-hei-4xl', 'md-lin-hei-5xl', 'md-lin-hei-6xl', 'md-lin-hei-7xl'] : [],
     textProps.dynamic ? ['sm-fon-siz-2xl', 'sm-fon-siz-3xl', 'sm-fon-siz-4xl', 'sm-fon-siz-5xl', 'sm-fon-siz-6xl'] : [],
     textProps.dynamic ? ['sm-lin-hei-2xl', 'sm-lin-hei-3xl', 'sm-lin-hei-4xl', 'sm-lin-hei-5xl', 'sm-lin-hei-6xl'] : [],
-    textProps.noPadding ? 'pad-y-0' : ["pad-y-4", "pad-y-5", "pad-y-6", "pad-y-7", "pad-y-8"]
+    textProps.noPadding ? 'pad-y-0' : ["pad-y-5", "pad-y-6", "pad-y-7", "pad-y-8", "pad-y-9"]
   ]);
 }
 
@@ -44,7 +44,7 @@ export const Headline: React.FC<TextProps> = (props) => {
     textProps.dynamic ? ['md-lin-hei-lg', 'md-lin-hei-xl', 'md-lin-hei-2xl', 'md-lin-hei-3xl', 'md-lin-hei-4xl'] : [],
     textProps.dynamic ? ['sm-fon-siz-md', 'sm-fon-siz-lg', 'sm-fon-siz-xl', 'sm-fon-siz-2xl', 'sm-fon-siz-3xl'] : [],
     textProps.dynamic ? ['sm-lin-hei-md', 'sm-lin-hei-lg', 'sm-lin-hei-xl', 'sm-lin-hei-2xl', 'sm-lin-hei-3xl'] : [],
-    textProps.noPadding ? 'pad-y-0' : ["pad-y-2", "pad-y-3", "pad-y-4", "pad-y-5", "pad-y-6"]
+    textProps.noPadding ? 'pad-y-0' : ["pad-y-3", "pad-y-4", "pad-y-5", "pad-y-6", "pad-y-7"]
   ]);
 }
 
@@ -62,7 +62,7 @@ export const Title: React.FC<TextProps> = (props) => {
     textProps.dynamic ? ['md-lin-hei-2xs', 'md-lin-hei-xs', 'md-lin-hei-sm', 'md-lin-hei-lg', 'md-lin-hei-xl'] : [],
     textProps.dynamic ? ['sm-fon-siz-3xs', 'sm-fon-siz-2xs', 'sm-fon-siz-xs', 'sm-fon-siz-md', 'sm-fon-siz-lg'] : [],
     textProps.dynamic ? ['sm-lin-hei-3xs', 'sm-lin-hei-2xs', 'sm-lin-hei-xs', 'sm-lin-hei-md', 'sm-lin-hei-lg'] : [],
-    textProps.noPadding ? 'pad-y-0' : ["pad-y-1", "pad-y-2", "pad-y-3", "pad-y-4", "pad-y-5"]
+    textProps.noPadding ? 'pad-y-0' : ["pad-y-2", "pad-y-3", "pad-y-4", "pad-y-5", "pad-y-6"]
   ]);
 }
 
@@ -76,7 +76,7 @@ export const Label: React.FC<TextProps> = (props) => {
     ...commonTextClasses(textProps),
     ['fon-siz-3xs', 'fon-siz-2xs', 'fon-siz-xs', 'fon-siz-sm', 'fon-siz-md'],
     ['lin-hei-3xs', 'lin-hei-2xs', 'lin-hei-xs', 'lin-hei-sm', 'lin-hei-md'],
-    textProps.noPadding ? 'pad-y-0' : ["pad-y-1", "pad-y-2", "pad-y-2", "pad-y-3", "pad-y-3"]
+    textProps.noPadding ? 'pad-y-0' : ["pad-y-2", "pad-y-3", "pad-y-3", "pad-y-4", "pad-y-4"]
   ]);
 }
 
@@ -90,6 +90,6 @@ export const Text: React.FC<TextProps> = (props) => {
     ...commonTextClasses(textProps),
     ['fon-siz-2xs', 'fon-siz-xs', 'fon-siz-sm', 'fon-siz-md', 'fon-siz-lg'],
     ['lin-hei-2xs', 'lin-hei-xs', 'lin-hei-sm', 'lin-hei-md', 'lin-hei-lg'],
-    textProps.noPadding ? 'pad-y-0' : ["pad-y-1", "pad-y-2", "pad-y-3", "pad-y-4", "pad-y-5"]
+    textProps.noPadding ? 'pad-y-0' : ["pad-y-2", "pad-y-3", "pad-y-4", "pad-y-5", "pad-y-6"]
   ]);
 }

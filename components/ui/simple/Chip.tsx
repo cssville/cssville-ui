@@ -33,15 +33,15 @@ export const Chip: React.FC<ChipProps> = (props) => {
     "dis-inline-block fon-fam-code tex-dec-none",
     ['fon-siz-2xs', 'fon-siz-xs', 'fon-siz-sm', 'fon-siz-md', 'fon-siz-lg'],
     ['lin-hei-2xs', 'lin-hei-xs', 'lin-hei-sm', 'lin-hei-md', 'lin-hei-lg'],
-    ['pad-y-0', 'pad-y-1', 'pad-y-1', 'pad-y-2', 'pad-y-3'],
+    ['pad-y-1', 'pad-y-2', 'pad-y-2', 'pad-y-3', 'pad-y-4'],
     chipProps.disabled ? 'opa-05' : '',
     chipProps.rounded
-      ? 'bor-rad-9999px'
+      ? 'bor-rad-max'
       : chipProps.square ? 'bor-rad-0'
-        : ['bor-rad-1', 'bor-rad-2', 'bor-rad-3', 'bor-rad-3', 'bor-rad-4'],
+        : ['bor-rad-2', 'bor-rad-3', 'bor-rad-4', 'bor-rad-4', 'bor-rad-5'],
     chipProps.rounded
-      ? ['pad-x-2', 'pad-x-3', 'pad-x-4', 'pad-x-4', 'pad-x-5']
-      : ['pad-x-2', 'pad-x-2', 'pad-x-3', 'pad-x-3', 'pad-x-4'],
+      ? ['pad-x-3', 'pad-x-4', 'pad-x-5', 'pad-x-5', 'pad-x-6']
+      : ['pad-x-3', 'pad-x-3', 'pad-x-4', 'pad-x-4', 'pad-x-5'],
     chipProps.bold ? 'fon-wei-bold' : 'fon-wei-500',
     chipProps.noBorder ? 'bor-none' :
       chipProps.filled ? 'bor-none'

@@ -23,7 +23,7 @@ export const Stack: React.FC<StackProps> = (props) => {
         : 'fle-dir-column',
     stackProps.noGap
       ? 'gap-0'
-      : ["gap-3", "gap-5", "gap-6", "gap-7", "gap-9"],
+      : ["gap-4", "gap-6", "gap-7", "gap-8", "gap-10"],
     stackProps.contentStart
       ? 'jus-con-start'
       : stackProps.contentCenter
