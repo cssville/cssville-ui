@@ -1,6 +1,6 @@
 {
   "name": "cssville-ui",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "",
   "files": [
     "LICENSE.md",
@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/cssville/cssville-web#readme",
   "dependencies": {
-    "cssville": "^0.9.2",
+    "cssville": "^0.9.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0"
